@@ -10,13 +10,12 @@ class ConfigService {
   static const String _configFileName = 'commands.json';
   static const String _appFolderName = 'SmartLauncher';
 
-  static const int _configVersion = 3;
+  // ═══ ПОДНИМАЕМ ВЕРСИЮ: 3 → 4 ═══
+  static const int _configVersion = 4;
   static const String _versionFileName = 'config_version';
 
   static const List<String> _builtInScripts = [
     'power_manager.py',
-    'clean_temp.py',
-    'empty_recycle_bin.py',
     'kill_process.py',
     'flush_dns.py',
     'convert_file.py',
@@ -26,13 +25,16 @@ class ConfigService {
     'batch_resize.py',
     'extract_audio.py',
     'create_gif.py',
-    'system_monitor.py',
   ];
 
+  // ═══ Скрипты которые больше не нужны как отдельные плашки ═══
   static const List<String> _deprecatedScripts = [
     'shutdown_timer.py',
     'cancel_shutdown.py',
     'sleep_pc.py',
+    'clean_temp.py',
+    'empty_recycle_bin.py',
+    'system_monitor.py',
   ];
 
   static void _log(String message) {
@@ -377,6 +379,7 @@ class ConfigService {
     _log('Reset to defaults complete');
   }
 
+  // ═══ БЕЗ ОЧИСТКИ — теперь это в CleanupDialog ═══
   static List<CommandItem> _getDefaultCommands() {
     return const [
       // ═══ ПИТАНИЕ ═══
@@ -388,28 +391,6 @@ class ConfigService {
         icon: 'power',
         category: 'power',
         color: 'red',
-        hasParameters: true,
-      ),
-
-      // ═══ ОЧИСТКА ═══
-      CommandItem(
-        id: '3',
-        name: 'Очистка TEMP',
-        description: 'Удалить временные файлы системы',
-        scriptPath: 'clean_temp.py',
-        icon: 'trash',
-        category: 'cleanup',
-        color: 'orange',
-        requiresAdmin: true,
-      ),
-      CommandItem(
-        id: '5',
-        name: 'Очистка корзины',
-        description: 'Полностью очистить корзину',
-        scriptPath: 'empty_recycle_bin.py',
-        icon: 'archive',
-        category: 'cleanup',
-        color: 'amber',
         hasParameters: true,
       ),
 

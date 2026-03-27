@@ -12,7 +12,9 @@ import '../widgets/action_card.dart';
 import '../widgets/log_modal.dart';
 import '../widgets/add_script_dialog.dart';
 import '../widgets/settings_drawer.dart';
+import '../widgets/cleanup_dialog.dart';
 import 'converter_screen.dart';
+import 'apps_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -120,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
                   ],
                 ),
               1 => const ConverterScreen(),
+              2 => const AppsScreen(),
               _ => const SizedBox(),
             },
           ),
@@ -159,18 +162,15 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
               ),
             ),
             const SizedBox(width: 32),
-
             _buildTab(0, 'Скрипты', Iconsax.command_square),
             _buildTab(1, 'Конвертер', Iconsax.convert),
-
+            _buildTab(2, 'Приложения', Iconsax.element_plus),
             const Spacer(),
-
             _buildTitleBarButton(
               icon: Iconsax.setting_2,
               onTap: () => _scaffoldKey.currentState?.openEndDrawer(),
             ),
             const SizedBox(width: 4),
-
             _buildWindowButton(
                 icon: Icons.remove,
                 onTap: () => windowManager.minimize()),
@@ -281,7 +281,6 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
       ('all', 'Все', Iconsax.category),
       ('power', 'Питание', Icons.power_settings_new),
       ('system', 'Система', Iconsax.monitor),
-      ('cleanup', 'Очистка', Iconsax.trash),
       ('network', 'Сеть', Iconsax.wifi),
       ('files', 'Файлы', Iconsax.folder),
       ('media', 'Медиа', Iconsax.image),
@@ -358,6 +357,51 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
                 icon: cat.$3,
               )),
           const Spacer(),
+
+          // ═══ Кнопка очистки системы ═══
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () => CleanupDialog.show(context),
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color(0xFF22C55E).withValues(alpha: 0.15),
+                        const Color(0xFF16A34A).withValues(alpha: 0.05),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color:
+                          const Color(0xFF22C55E).withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: const Row(
+                    children: [
+                      Icon(Iconsax.broom,
+                          color: Color(0xFF22C55E), size: 20),
+                      SizedBox(width: 12),
+                      Text(
+                        'Очистка системы',
+                        style: TextStyle(
+                          color: Color(0xFF22C55E),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+
           Padding(
             padding: const EdgeInsets.all(12),
             child: _buildSidebarButton(
@@ -644,7 +688,6 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
       'all': 'Все скрипты',
       'power': 'Питание',
       'system': 'Система',
-      'cleanup': 'Очистка',
       'network': 'Сеть',
       'files': 'Файлы',
       'media': 'Медиа',
