@@ -1,18 +1,69 @@
-# smart_launcher
+# 🚀 SmartLauncher
 
-A new Flutter project.
+![Flutter](https://img.shields.io/badge/Made_with-Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Python](https://img.shields.io/badge/Embedded-Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FFmpeg](https://img.shields.io/badge/Powered_by-FFmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white)
 
-## Getting Started
+**SmartLauncher** — это современный, быстрый и удобный хаб для автоматизации рутинных задач в Windows. Выполняйте скрипты, конвертируйте медиафайлы и управляйте системой в один клик через красивый интерфейс.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Главные возможности
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+* 🛠 **Управление скриптами:** Запускайте `.py`, `.bat`, `.ps1` и `.cmd` скрипты прямо из приложения. Скрипты разделены по категориям для быстрого поиска.
+* 🔄 **Универсальный конвертер:** Встроенная поддержка FFmpeg для мгновенной конвертации видео (MP4, MKV, AVI), аудио (MP3, WAV) и изображений (JPG, PNG, WEBP, ICO) без потери качества.
+* 🧹 **Системные утилиты из коробки:** 
+  * Быстрая очистка кэша, папки Temp и корзины.
+  * Умная сортировка файлов в папке.
+  * Таймеры выключения и перезагрузки ПК.
+* 📦 **Zero-Install архитектура:** Вам не нужно устанавливать Python или FFmpeg в систему. Всё необходимое уже встроено (Embedded) под капотом лаунчера.
+* ☁️ **Автообновления:** Встроенный апдейтер сам проверит наличие новой версии на GitHub, скачает и установит её в тихом режиме.
+* 🎨 **Современный UI:** Написан на Flutter. Полностью кастомный TitleBar, поддержка системных логов в реальном времени и плавная анимация.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# smart-launcher" 
+---
+
+## 📥 Установка
+
+1. Перейдите на страницу [Releases](../../releases/latest).
+2. Скачайте последний файл `SmartLauncher_Setup_X.X.X.exe`.
+3. Запустите установщик (не требует прав администратора).
+4. Пользуйтесь!
+
+---
+
+## 🛠 Как добавить свой скрипт?
+
+SmartLauncher поддерживает добавление пользовательских скриптов:
+
+1. Откройте приложение и нажмите **«Добавить скрипт»**.
+2. Введите название, описание и выберите категорию.
+3. Укажите путь к вашему скрипту (`.py`, `.bat`, `.ps1`).
+4. (Опционально) Настройте аргументы командной строки (например, выбор файла или папки перед запуском).
+5. Скрипт мгновенно появится в библиотеке и будет готов к запуску!
+
+---
+
+## 💻 Сборка из исходников (Для разработчиков)
+
+Если вы хотите собрать проект самостоятельно или внести изменения:
+
+### Требования:
+* [Flutter SDK](https://docs.flutter.dev/get-started/install/windows)
+* Visual Studio 2022 (с компонентом "Разработка классических приложений C++")
+* Inno Setup (для сборки установщика)
+
+### Шаги:
+```bash
+# 1. Клонируем репозиторий
+git clone https://github.com/ВАШ_ЮЗЕРНЕЙМ/smart-launcher.git
+cd smart-launcher
+
+# 2. Получаем зависимости Flutter
+flutter pub get
+
+# 3. Запускаем в режиме отладки
+flutter run -d windows
+
+# 4. Собираем релизный билд
+flutter build windows --release
