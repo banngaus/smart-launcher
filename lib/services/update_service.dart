@@ -26,9 +26,9 @@ class UpdateService {
   // ══════════════════════════════════════════════
   // ⚙️ НАСТРОЙ ЭТО ПОД СЕБЯ
   // ══════════════════════════════════════════════
-  static const String currentVersion = '1.0.0';
+  static const String currentVersion = '1.0.1';
   static const String githubOwner = 'banngaus';
-  static const String githubRepo = 'https://github.com/banngaus/smart-launcher.git';
+  static const String githubRepo = 'smart-launcher';
   static const String exeName = 'smart_launcher.exe';
   // ══════════════════════════════════════════════
 

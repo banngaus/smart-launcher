@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
     super.dispose();
   }
 
-  // ═══ Свернуть в трей при закрытии окна ═══
   @override
   void onWindowClose() async {
     await windowManager.hide();
@@ -114,15 +113,15 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
           _buildTitleBar(),
           Expanded(
             child: switch (_currentTab) {
-                0 => Row(
-                    children: [
-                      _buildScriptsSidebar(),
-                      Expanded(child: _buildScriptsContent()),
-                    ],
-                  ),
-                1 => const ConverterScreen(),
-                _ => const SizedBox(),
-            }
+              0 => Row(
+                  children: [
+                    _buildScriptsSidebar(),
+                    Expanded(child: _buildScriptsContent()),
+                  ],
+                ),
+              1 => const ConverterScreen(),
+              _ => const SizedBox(),
+            },
           ),
         ],
       ),
@@ -163,7 +162,6 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
 
             _buildTab(0, 'Скрипты', Iconsax.command_square),
             _buildTab(1, 'Конвертер', Iconsax.convert),
-            _buildTab(2, 'Монитор', Iconsax.activity),
 
             const Spacer(),
 
@@ -186,7 +184,6 @@ class _HomeScreenState extends State<HomeScreen> with WindowListener {
                 }
               },
             ),
-            // Закрытие = свернуть в трей
             _buildWindowButton(
               icon: Icons.close,
               onTap: () => windowManager.hide(),

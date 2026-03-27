@@ -3,7 +3,7 @@
 ; ══════════════════════════════════════════════
 
 #define MyAppName "SmartLauncher"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.1"
 #define MyAppPublisher "SmartLauncher"
 #define MyAppURL "https://github.com/your-username/smart-launcher"
 #define MyAppExeName "smart_launcher.exe"
