@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "name": "Выключение по таймеру",
+    "description": "Установить таймер автоматического выключения ПК",
+    "script_path": "shutdown_timer.py",
+    "icon": "power",
+    "category": "power",
+    "color": "red",
+    "requires_admin": false,
+    "parameters": {
+      "minutes": 60
+    }
+  },
+  {
+    "id": "2",
+    "name": "Очистка TEMP",
+    "description": "Удалить временные файлы Windows и приложений",
+    "script_path": "clean_temp.py",
+    "icon": "trash",
+    "category": "cleanup",
+    "color": "orange",
+    "requires_admin": true
+  },
+  {
+    "id": "3",
+    "name": "Информация о системе",
+    "description": "Показать подробную информацию о ПК",
+    "script_path": "system_info.py",
+    "icon": "info",
+    "category": "system",
+    "color": "blue",
+    "requires_admin": false
+  },
+  {
+    "id": "4",
+    "name": "Очистка корзины",
+    "description": "Полностью очистить корзину Windows",
+    "script_path": "empty_recycle_bin.py",
+    "icon": "archive",
+    "category": "cleanup",
+    "color": "amber",
+    "requires_admin": false
+  },
+  {
+    "id": "5",
+    "name": "Убить процесс",
+    "description": "Принудительно завершить выбранный процесс",
+    "script_path": "kill_process.py",
+    "icon": "close",
+    "category": "system",
+    "color": "pink",
+    "requires_admin": true
+  },
+  {
+    "id": "6",
+    "name": "Очистка DNS кэша",
+    "description": "Сбросить кэш DNS для устранения проблем с сетью",
+    "script_path": "flush_dns.py",
+    "icon": "wifi",
+    "category": "network",
+    "color": "cyan",
+    "requires_admin": true
+  },
+  {
+    "id": "7",
+    "name": "Быстрый сон",
+    "description": "Перевести компьютер в режим сна",
+    "script_path": "sleep_pc.py",
+    "icon": "clock",
+    "category": "power",
+    "color": "violet",
+    "requires_admin": false
+  },
+  {
+    "id": "8",
+    "name": "Проверка диска",
+    "description": "Проверить состояние жёсткого диска",
+    "script_path": "check_disk.py",
+    "icon": "disk",
+    "category": "system",
+    "color": "emerald",
+    "requires_admin": false
+  }
+]

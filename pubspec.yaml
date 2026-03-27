@@ -1,0 +1,42 @@
+name: smart_launcher
+description: Windows automation tool with beautiful UI
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  google_fonts: ^6.1.0
+  flutter_animate: ^4.3.0
+  iconsax: ^0.0.8
+  path_provider: ^2.1.1
+  shared_preferences: ^2.2.2
+  file_picker: ^6.1.1
+  window_manager: ^0.3.7
+  system_tray: ^2.0.3
+  tray_manager: ^0.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/scripts/power_manager.py
+    - assets/scripts/clean_temp.py
+    - assets/scripts/empty_recycle_bin.py
+    - assets/scripts/kill_process.py
+    - assets/scripts/flush_dns.py
+    - assets/scripts/convert_file.py
+    - assets/scripts/sort_files.py
+    - assets/scripts/batch_resize.py
+    - assets/scripts/extract_audio.py
+    - assets/scripts/create_gif.py
+    - assets/icon/app_icon.ico

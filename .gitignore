@@ -1,0 +1,43 @@
+# Flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Windows build
+windows/flutter/ephemeral/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Installer output
+installer_output/
+
+# Embedded Python (слишком большой)
+python/*.dll
+python/*.exe
+python/*.zip
+python/Lib/
+python/DLLs/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db
+
+# FFmpeg (слишком большие для GitHub)
+windows/python/ffmpeg.exe
+windows/python/ffprobe.exe
+python/ffmpeg.exe
+python/ffprobe.exe
+*.exe
+!smart_launcher.exewindows/python/ffmpeg.exe 
+windows/python/ffprobe.exe 
