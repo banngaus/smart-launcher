@@ -3,9 +3,9 @@
 ; ══════════════════════════════════════════════
 
 #define MyAppName "SmartLauncher"
-#define MyAppVersion "1.0.2"
+#define MyAppVersion "1.0.3"
 #define MyAppPublisher "SmartLauncher"
-#define MyAppURL "https://github.com/your-username/smart-launcher"
+#define MyAppURL "https://github.com/banngaus/smart-launcher"
 #define MyAppExeName "smart_launcher.exe"
 
 ; ═══ Пути к файлам на твоем компьютере ═══

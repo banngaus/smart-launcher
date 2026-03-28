@@ -104,7 +104,7 @@ class _AppsScreenState extends State<AppsScreen> {
       category: 'internet',
       icon: Iconsax.arrow_down_2,
       color: Color(0xFF2563EB),
-      url: 'https://sourceforge.net/projects/qbittorrent/files/latest/download',
+      url: 'https://altushost-bul.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-5.1.4/qbittorrent_5.1.4_x64_setup.exe?viasf=1',
       registryName: 'qBittorrent',
     ),
 

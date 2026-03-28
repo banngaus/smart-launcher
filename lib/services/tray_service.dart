@@ -49,6 +49,12 @@ class TrayService {
   }
 
   static Future<void> show() async {
+    // Проверяем, свёрнуто ли окно в таскбар (свёрнуто минусом)
+    if (await windowManager.isMinimized()) {
+      await windowManager.restore();
+    }
+    
+    // Вытаскиваем из трея и даем фокус
     await windowManager.show();
     await windowManager.focus();
   }
